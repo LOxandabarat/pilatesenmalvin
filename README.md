@@ -1,70 +1,246 @@
-# Getting Started with Create React App
+# Pilates en Malvín - Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sitio web moderno para estudio de Pilates construido con React 18 y Tailwind CSS, con enfoque mobile-first.
 
-## Available Scripts
+## 🚀 Características
 
-In the project directory, you can run:
+- ✨ Diseño moderno y elegante
+- 📱 Mobile-first y completamente responsive
+- 🎨 Sistema de tokens de diseño con Tailwind CSS
+- 🔐 Modal de login integrado
+- 🎯 Componentes reutilizables
+- ⚡ React 18.3 con las últimas características
+- 🎨 Tailwind CSS 3.4 para estilos
+
+## 📋 Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── Header/              # Navegación principal y login button
+│   │   └── Header.jsx
+│   ├── LoginModal/          # Modal de autenticación
+│   │   └── LoginModal.jsx
+│   ├── sections/            # Secciones de la página
+│   │   ├── HeroSection.jsx
+│   │   ├── AboutSection.jsx
+│   │   ├── ServicesSection.jsx
+│   │   ├── TestimonialsSection.jsx
+│   │   ├── JournalSection.jsx
+│   │   └── CTASection.jsx
+│   └── common/              # Componentes reutilizables
+│       ├── Button.jsx
+│       ├── ServiceCard.jsx
+│       ├── JournalCard.jsx
+│       └── TestimonialCard.jsx
+├── pages/
+│   └── Home.jsx             # Página principal que integra todo
+├── App.js                   # Componente raíz
+├── index.css                # Estilos globales y Tailwind
+└── index.js                 # Punto de entrada
+```
+
+## 🎨 Sistema de Tokens de Diseño
+
+Los tokens de diseño están configurados en `tailwind.config.js`:
+
+### Colores
+- `sage-green` / `primary`: #8B9B8E
+- `cream` / `background`: #F5F1ED
+- `dark`: #2C2C2C
+- `gold` / `secondary`: #C9A961
+
+### Tipografía
+- Font principal: Montserrat
+- Font para títulos: Playfair Display
+
+### Breakpoints (Mobile-First)
+- `sm`: 640px
+- `md`: 768px
+- `lg`: 1024px
+- `xl`: 1440px
+
+## 🛠️ Instalación
+
+### Prerrequisitos
+
+Asegúrate de tener instalado:
+- Node.js (versión 16 o superior)
+- npm o yarn
+
+### Pasos de Instalación
+
+1. **Clona el repositorio** (si aplica)
+   ```bash
+   git clone [url-del-repositorio]
+   cd pilatesenmalvin
+   ```
+
+2. **Instala las dependencias**
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el servidor de desarrollo**
+   ```bash
+   npm start
+   ```
+
+4. **Abre tu navegador**
+   
+   La aplicación se abrirá automáticamente en `http://localhost:3000`
+
+## 📦 Scripts Disponibles
+
+En el directorio del proyecto, puedes ejecutar:
 
 ### `npm start`
+Inicia la aplicación en modo desarrollo.
+Abre [http://localhost:3000](http://localhost:3000) para verla en el navegador.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm build`
+Construye la aplicación para producción en la carpeta `build`.
 
 ### `npm test`
+Ejecuta los tests en modo interactivo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧩 Componentes Principales
 
-### `npm run build`
+### Header
+- Navegación responsive con menú hamburguesa en móvil
+- Botón de login que abre modal
+- Diseño sticky que permanece en la parte superior
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### LoginModal
+- Modal de autenticación con formulario
+- Integración de login social (Google, Facebook)
+- Validación de campos
+- Animaciones suaves
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Secciones
+1. **HeroSection**: Banner principal con imagen de fondo
+2. **AboutSection**: Información sobre el estudio con imágenes
+3. **ServicesSection**: Grid de servicios con cards interactivas
+4. **TestimonialsSection**: Carrusel de testimonios con navegación
+5. **JournalSection**: Blog/artículos con grid responsive
+6. **CTASection**: Llamada a la acción final
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 Uso de Componentes Reutilizables
 
-### `npm run eject`
+### Button Component
+```jsx
+import Button from './components/common/Button';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<Button variant="primary" size="md" onClick={handleClick}>
+  Click Me
+</Button>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Variantes: `primary`, `secondary`, `outline`, `ghost`
+Tamaños: `sm`, `md`, `lg`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ServiceCard Component
+```jsx
+import ServiceCard from './components/common/ServiceCard';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<ServiceCard
+  image="url-imagen"
+  title="Título del Servicio"
+  description="Descripción breve"
+/>
+```
 
-## Learn More
+### JournalCard Component
+```jsx
+import JournalCard from './components/common/JournalCard';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<JournalCard
+  image="url-imagen"
+  title="Título del Artículo"
+  description="Descripción del artículo"
+  date="MAY 15, 2026"
+/>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### TestimonialCard Component
+```jsx
+import TestimonialCard from './components/common/TestimonialCard';
 
-### Code Splitting
+<TestimonialCard
+  quote="Testimonio del cliente"
+  author="Nombre del Cliente"
+  role="Rol o Profesión"
+/>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Personalización de Estilos
 
-### Analyzing the Bundle Size
+Para modificar los colores, tipografía u otros tokens de diseño, edita `tailwind.config.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#TU_COLOR_AQUI',
+        // ... más colores
+      },
+    },
+  },
+}
+```
 
-### Making a Progressive Web App
+## 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+El sitio está diseñado con enfoque mobile-first. Los breakpoints se aplican de la siguiente manera:
 
-### Advanced Configuration
+```jsx
+// Mobile (default)
+<div className="text-sm">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+// Tablet (md: 768px)
+<div className="text-sm md:text-base">
 
-### Deployment
+// Desktop (lg: 1024px)
+<div className="text-sm md:text-base lg:text-lg">
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔄 Próximas Mejoras
 
-### `npm run build` fails to minify
+- [ ] Agregar animaciones y transiciones personalizadas
+- [ ] Implementar lazy loading para imágenes
+- [ ] Agregar internacionalización (i18n)
+- [ ] Integrar backend para autenticación real
+- [ ] Agregar más secciones según necesidad
+- [ ] Implementar modo oscuro
+- [ ] Optimizar SEO
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Notas Importantes
+
+- Las imágenes actuales usan placeholders de Unsplash
+- Reemplaza las imágenes con tus propias fotografías del estudio
+- Actualiza los textos lorem ipsum con contenido real
+- Configura las URLs de los enlaces según tus necesidades
+
+## 📄 Licencia
+
+Este proyecto es privado y pertenece a Pilates en Malvín.
+
+## 📞 Contacto
+
+Para más información:
+- Email: info@pilatesmalvin.com
+- Ubicación: Malvín, Montevideo
+- Teléfono: +598 99 123 456
+
+---
+
+Desarrollado con ❤️ usando React y Tailwind CSS
