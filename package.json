@@ -1,4 +1,5 @@
 {
+  "homepage": "https://pilatesenmalvin.com",
   "name": "pilates-en-malvin-app",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.0",
